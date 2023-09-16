@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyfuek54i84rm"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_pvt57"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_pvt57")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 63.0
+offset_top = 36.0
+offset_right = 185.0
+offset_bottom = 100.0
+text = "play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 65.0
+offset_top = 127.0
+offset_right = 187.0
+offset_bottom = 191.0
+tooltip_text = "this is the qut button."
+text = "quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
