@@ -8,6 +8,7 @@ func saveGame():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE) # create file
 	if file == null:
 		file = FileAccess.open(RES_PATH, FileAccess.WRITE) # create file
+
 	var data = {
 		"playerHP": Game.playerHP,
 		"Gold": Game.Gold,

@@ -296,6 +296,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(284, 20)
 script = SubResource("GDScript_ls203")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -308,11 +309,6 @@ sprite_frames = SubResource("SpriteFrames_tx7g6")
 animation = &"Jump"
 frame = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.6, 1.6)
-limit_left = 0
-limit_top = 0
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -320,3 +316,12 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_abqn8")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, 0)
+limit_left = 0
+limit_top = 0
+limit_right = 1260
+limit_bottom = 600
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0

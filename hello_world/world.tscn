@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx0qk0df7fvrr"]
+[gd_scene load_steps=10 format=3 uid="uid://dx0qk0df7fvrr"]
 
 [ext_resource type="PackedScene" uid="uid://cvf24t8wm3hhm" path="res://Player/Player.tscn" id="1_7oa41"]
 [ext_resource type="PackedScene" uid="uid://bikmwvlyr4ou8" path="res://BG.tscn" id="1_rscd3"]
 [ext_resource type="Texture2D" uid="uid://cfo3qovm108gm" path="res://sunny-land/assets/environment/tileset.png" id="3_6tplq"]
 [ext_resource type="PackedScene" uid="uid://cgh7k3floodxu" path="res://Flog.tscn" id="4_d53ya"]
+[ext_resource type="PackedScene" uid="uid://wcw86ub08gsj" path="res://collectables/Cherry.tscn" id="5_758fw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2sej"]
 texture = ExtResource("3_6tplq")
@@ -455,21 +456,34 @@ layer_0/tile_data = PackedInt32Array(2359296, 65536, 3, 2424832, 65536, 5, 24903
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("1_7oa41")]
-position = Vector2(360, 130)
+position = Vector2(568, 327)
 
 [node name="Enemies" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Flog" parent="Enemies" instance=ExtResource("4_d53ya")]
-position = Vector2(647, 491)
+position = Vector2(653, 347)
 
 [node name="Flog3" parent="Enemies" instance=ExtResource("4_d53ya")]
-position = Vector2(407, 482)
+position = Vector2(396, 321)
 
 [node name="Flog4" parent="Enemies" instance=ExtResource("4_d53ya")]
-position = Vector2(996, 323)
+position = Vector2(981, 262)
 
 [node name="Flog5" parent="Enemies" instance=ExtResource("4_d53ya")]
-position = Vector2(112, 338)
+position = Vector2(90, 342)
+
+[node name="Flog8" parent="Enemies" instance=ExtResource("4_d53ya")]
+position = Vector2(486, 519)
+
+[node name="Flog9" parent="Enemies" instance=ExtResource("4_d53ya")]
+position = Vector2(213, 336)
+
+[node name="Flog6" parent="Enemies" instance=ExtResource("4_d53ya")]
+position = Vector2(863, 462)
+
+[node name="Flog7" parent="Enemies" instance=ExtResource("4_d53ya")]
+position = Vector2(160, 88)
 
 [node name="UI(CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -492,3 +506,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "GOLD"
 script = SubResource("GDScript_agvnc")
+
+[node name="collectables" type="Node2D" parent="."]
+
+[node name="Cherry(Area2D" parent="collectables" instance=ExtResource("5_758fw")]
+position = Vector2(180, 564)
