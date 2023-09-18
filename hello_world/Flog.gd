@@ -47,10 +47,12 @@ func _on_player_death_area_2d_body_entered(body):
 
 func _on_player_collision_area_2d_body_entered(body):
 	if body.name == "Player":
-		body.health -= 3
-		# dealth()
+		Game.playerHP -= 3
+		dealth()
 
 func dealth():
+	Game.Gold += 3
+	Utils.saveGame()
 	velocity.x = 0
 	chase = false
 	get_node("AnimatedSprite2D").play("Death")

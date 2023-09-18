@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx0qk0df7fvrr"]
+[gd_scene load_steps=9 format=3 uid="uid://dx0qk0df7fvrr"]
 
 [ext_resource type="PackedScene" uid="uid://cvf24t8wm3hhm" path="res://Player/Player.tscn" id="1_7oa41"]
 [ext_resource type="PackedScene" uid="uid://bikmwvlyr4ou8" path="res://BG.tscn" id="1_rscd3"]
@@ -425,13 +425,22 @@ texture = ExtResource("3_6tplq")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_k2sej")
 
-[sub_resource type="GDScript" id="GDScript_6rm43"]
+[sub_resource type="GDScript" id="GDScript_7ph8c"]
 script/source = "extends Label
 
 # HP (Label
 
 func _process(delta):
-	text = \"HP: \" + str(get_node(\"../../Player/Player\").health)
+	text = \"HP: \" + str(Game.playerHP)
+"
+
+[sub_resource type="GDScript" id="GDScript_agvnc"]
+script/source = "extends Label
+
+# HP (Label
+
+func _process(delta):
+	text = \"Gold: \" + str(Game.Gold)
 "
 
 [node name="World" type="Node2D"]
@@ -465,9 +474,21 @@ position = Vector2(112, 338)
 [node name="UI(CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hp(Label" type="Label" parent="UI(CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 45.0
+offset_bottom = 43.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "HP"
-script = SubResource("GDScript_6rm43")
+script = SubResource("GDScript_7ph8c")
+
+[node name="Gold(Label" type="Label" parent="UI(CanvasLayer"]
+offset_left = 3.0
+offset_top = 40.0
+offset_right = 70.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "GOLD"
+script = SubResource("GDScript_agvnc")
